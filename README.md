@@ -2,6 +2,53 @@
 
 A new Flutter project.
 
+```yaml
+  mobx: ^2.0.1
+  mobx_codegen: ^2.0.1+3
+  flutter_mobx: ^2.0.0
+  build_runner: ^2.0.2
+```
+Create .g.dart file
+```
+flutter packages pub run build_runner build
+```
+
+```dart
+
+part 'counter_store.g.dart';
+
+class Counter = _CounterStore with _$Counter;
+
+abstract class _CounterStore with Store {
+  @observable
+  int counter = 0;
+
+  @action
+  void increment() {
+    counter++;
+  }
+
+  @action
+  void decrease() {
+    counter--;
+  }
+}
+```
+Main
+```dart
+ final counter = Counter();
+
+ Observer(
+     build: (_)=>Text('${counter.counter}');
+ )
+ Button(
+     onPressed: () => counter.increment(),
+ )
+ Button(
+     onPressed: () => counter.decrease(),
+ )
+```
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
