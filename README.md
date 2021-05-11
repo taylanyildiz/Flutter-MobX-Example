@@ -10,7 +10,7 @@ A new Flutter project.
 ```
 Create .g.dart file
 ```
-flutter packages pub run build_runner build
+flutter packages pub run build_runner watch
 ```
 
 ```dart
