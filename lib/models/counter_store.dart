@@ -17,4 +17,7 @@ abstract class _CounterStore with Store {
   void decrease() {
     counter--;
   }
+
+  @computed
+  String get state => counter % 2 == 0 ? 'true' : ' false';
 }

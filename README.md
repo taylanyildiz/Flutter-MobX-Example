@@ -32,6 +32,9 @@ abstract class _CounterStore with Store {
   void decrease() {
     counter--;
   }
+
+  @computed
+  String get state => counter % 2 == 0 ? 'true' : ' false';
 }
 ```
 Main
@@ -40,6 +43,9 @@ Main
 
  Observer(
      build: (_)=>Text('${counter.counter}');
+ )
+ Observer(
+     build: (_)=>Text('${counter.state}');
  )
  Button(
      onPressed: () => counter.increment(),

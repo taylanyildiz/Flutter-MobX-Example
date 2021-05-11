@@ -36,6 +36,16 @@ class _IncrementScreenState extends State<IncrementScreen> {
                 ),
               ),
             ),
+            Observer(
+              builder: (_) => Text(
+                '${counter.state}',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             SizedBox(height: 40.0),
             MaterialButton(
               onPressed: () => counter.increment(),
